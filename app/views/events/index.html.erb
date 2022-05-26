@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Events</h1>
+
+  
+
+ 
+  <% @events.each do |event| %>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= event.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+      <p class="card-text"><%= event.location %>.</p>
+      <p>Hosted by <%=event.email %></p>
+      <%= link_to "Show this event", event, class:"card-link" %>  
+    </div>
+  </div>
+
+
+<% end %>
+
+  
+
+<%= link_to "New event", new_event_path %>
